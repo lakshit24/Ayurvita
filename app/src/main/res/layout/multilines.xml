@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="line1"
         android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:textSize="14sp" />
     <TextView
         android:id="@+id/lineB"
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
 
         <TextView
             android:id="@+id/lineD"
-            android:layout_width="115dp"
+            android:layout_width="67dp"
             android:layout_height="match_parent"
             android:layout_weight="0.20"
             android:text="line3"
@@ -48,12 +48,12 @@
 
         <TextView
             android:id="@+id/lineE"
-            android:layout_width="123dp"
+            android:layout_width="147dp"
             android:layout_height="match_parent"
             android:layout_weight="0.20"
             android:text="line3"
-            android:textStyle="bold"
             android:textColor="@color/DarkGreen"
-            android:textSize="14sp" />
+            android:textSize="12sp"
+            android:textStyle="normal" />
     </LinearLayout>
 </LinearLayout>

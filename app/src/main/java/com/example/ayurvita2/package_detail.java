@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class package_detail extends AppCompatActivity {
     TextView tvPackage_name,tvTotal_cost;
     EditText et1;
-    Button atc;
+    Button atc,h;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,7 @@ public class package_detail extends AppCompatActivity {
         tvTotal_cost=findViewById(R.id.textViewTotalCost);
         et1=findViewById(R.id.editTextTextMultiLine);
         atc=findViewById(R.id.buttonAddtocart);
-
+        h=findViewById(R.id.imageButton1);
         et1.setKeyListener(null);
 
 
@@ -53,6 +53,12 @@ public class package_detail extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Added to cart",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(package_detail.this,packages.class));
                 }
+            }
+        });
+        h.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(package_detail.this,Home.class));
             }
         });
 

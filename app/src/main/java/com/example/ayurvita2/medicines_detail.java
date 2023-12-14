@@ -16,7 +16,7 @@ public class medicines_detail extends AppCompatActivity {
 
     TextView tvMed_name,tvTotal_cost;
     EditText et1;
-    Button atc;
+    Button atc,h;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class medicines_detail extends AppCompatActivity {
         et1=findViewById(R.id.editTextTextMultiLineM);
         atc=findViewById(R.id.buttonAddtocartM);
         et1.setKeyListener(null);
+        h=findViewById(R.id.imageButton1);
 
         Intent inte=getIntent();
         tvMed_name.setText(inte.getStringExtra("text1"));
@@ -53,6 +54,12 @@ public class medicines_detail extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Added to cart",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(medicines_detail.this,medicines.class));
                 }
+            }
+        });
+        h.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(medicines_detail.this,Home.class));
             }
         });
 

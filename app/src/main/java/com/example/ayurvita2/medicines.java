@@ -54,7 +54,7 @@ public class medicines extends AppCompatActivity {
     HashMap<String,String> item;
     ArrayList list;
     SimpleAdapter sa;
-    Button gtc;
+    Button gtc,h;
     ListView lstv;
 
 
@@ -64,11 +64,18 @@ public class medicines extends AppCompatActivity {
         setContentView(R.layout.activity_medicines);
         lstv=findViewById(R.id.listViewBM);
         gtc=findViewById(R.id.buttonGoToCartBM);
+        h=findViewById(R.id.imageButton1);
 
         gtc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(medicines.this,cart_medicines.class));
+            }
+        });
+        h.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(medicines.this,Home.class));
             }
         });
 

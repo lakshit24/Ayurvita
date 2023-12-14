@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Ayurvita2</string>
+
+    <string name="drawer_open">open drawer</string>
+
+    <string name="drawer_close">close drawer</string>
+
+    <string name="sign_in_string">Sign in</string>
+
+    <string name="email_or_user_name_ek2_string">Email or User Name</string>
+
+    <string name="sign_in_ek1_string">Sign in</string>
+
+    <string name="password_ek2_string">Password</string>
+
+    <string name="forget_password___string">Forget Password ?</string>
+
+    <string name="or_sign_in_with_string">Or sign in With</string>
+
+    <string name="don_t_have_account___string">Dont have account ? </string>
+
+    <string name="sign_up_string">Sign Up</string>
+
+    <string name="map_api">AIzaSyAP3HgV57xM73yWTtNYitMfWac-hxmZvcs</string>
+    <string name="title_activity_myabout">Myabout</string>
 </resources>

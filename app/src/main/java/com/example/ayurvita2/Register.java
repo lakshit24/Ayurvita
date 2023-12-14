@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Pattern;
+
 public class Register extends AppCompatActivity {
     EditText edRusername,edRemail,edRpassword,edRconfirm;
     TextView tvToLogin;
@@ -48,13 +50,13 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please Fill All Details", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-//                        Toast.makeText(getApplicationContext(), "Email Verified !", Toast.LENGTH_SHORT).show();
+                    if(isValidEmailId(email.trim())){
+//                        Toast.makeText(getApplicationContext(), "Valid Email Address.", Toast.LENGTH_SHORT).show();
                         flagEmail=1;
-
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Enter valid Email address !", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(getApplicationContext(), "InValid Email Address.", Toast.LENGTH_SHORT).show();
                     }
+
                     if(password.compareTo(confirmPassword)==0){
                         if (isValid(password)){
                             flagPass=1;
@@ -67,13 +69,23 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Password and Confirm Password do not match", Toast.LENGTH_SHORT).show();
                     }
                 }
-                if(flagEmail==1 && flagPass==1) {
+                if(flagPass==1 && flagEmail==1) {
                     db.register(username,email,password);
                     Toast.makeText(getApplicationContext(), "Record Inserted", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(Register.this, Login.class));
                 }
             }
         });
+    }
+
+    private boolean isValidEmailId(String emailId){
+
+        return Pattern.compile("^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$").matcher(emailId).matches();
     }
     public  static  boolean isValid(String passwordHere){
         int f1=0,f2=0,f3=0;

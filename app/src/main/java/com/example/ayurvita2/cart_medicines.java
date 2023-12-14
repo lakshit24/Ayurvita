@@ -65,7 +65,7 @@ public class cart_medicines extends AppCompatActivity {
             totalAmount=totalAmount+Float.parseFloat(strdata[1]);
         }
 //
-        total.setText("Total Cost :"+totalAmount);
+        total.setText("Total Amount to be paid :"+totalAmount);
 
         list=new ArrayList<>();
         for (int i = 0; i < meds.length; i++) {

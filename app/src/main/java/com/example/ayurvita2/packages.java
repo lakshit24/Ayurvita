@@ -25,22 +25,22 @@ public class packages extends AppCompatActivity {
 ;
 
     private String[] package_details={
-            "•This package is designed to relax and vitalize the body.\n•In addition to medical steam baths, herbal medicine and soothing face masks, it also includes two highlights of Ayurvedic treatment: full-body massages (Abhyanga) and pouring of warm liquids onto the forehead (Shirodhara). \n•Their base are warm herbal oils, which are mixed according to centuries-old recipes.\n\n"+"DURATION OF TREATMENT: 90-120 MIN",
+            "ABOUT\n•This package is designed to relax and vitalize the body.\n\n•In addition to medical steam baths, herbal medicine and soothing face masks, it also includes two highlights of Ayurvedic treatment: full-body massages (Abhyanga) and pouring of warm liquids onto the forehead (Shirodhara)\n\n•Their base are warm herbal oils, which are mixed according to centuries-old recipes.\n\n"+"DURATION OF TREATMENT: 90-120 Mins",
 
-            "•This Ayurveda package cleanses the body and mind.The focus is on cleansing procedures (Panchakarma), oil applications (Snehana), herbal steam baths (Swendanam), pouring of warm oils onto the forehead (Shirodhara) and - as a climax - the royal oil bath treatment (Pizhichil).\n•In their treatments, doctors and therapists draw on the effectiveness of traditional remedies - such as Ayurvedic oils, herbs and ghee.\n\n"+"DURATION OF TREATMENT: 90-120 MIN",
+            "ABOUT\n•This Ayurveda package cleanses the body and mind.The focus is on cleansing procedures (Panchakarma), oil applications (Snehana), herbal steam baths (Swendanam), pouring of warm oils onto the forehead (Shirodhara) and - as a climax - the royal oil bath treatment (Pizhichil).\n\n•In their treatments, doctors and therapists draw on the effectiveness of traditional remedies - such as Ayurvedic oils, herbs and ghee.\n\n"+"DURATION OF TREATMENT: 90-120 Mins",
 
-            "•Getting older and still not aging: With the Body Immunisation Package we come very close to this wish.\n•The focus is on the knowledge of the Rasayanas.\n•These are primarily rejuvenating remedies.\n•The treatment leads to a transformation of the body tissue (dhatus) and counteracts negative influences.\n\n"+"DURATION OF TREATMENT: 90-120 MIN",
+            "ABOUT\n•Getting older and still not aging: With the Body Immunisation Package we come very close to this wish.\n\n•The focus is on the knowledge of the Rasayanas.\n\n•These are primarily rejuvenating remedies.\n\n•The treatment leads to a transformation of the body tissue (dhatus) and counteracts negative influences.\n\n"+"DURATION OF TREATMENT: 90-120 Mins",
 
-            "•If you suffer from stress or burn-out symptoms, the Stress Management Package is the right choice.\n•Among other things, this package includes pouring of warm oil onto the forehead (Shirodhara), herbal steam baths as well as yoga and meditation.\n•It is the goal to let body and soul come to rest.\n\n"+"DURATION OF TREATMENT: 180-240 MIN",
+            "ABOUT\n•If you suffer from stress or burn-out symptoms, the Stress Management Package is the right choice.\n\n•Among other things, this package includes pouring of warm oil onto the forehead (Shirodhara), herbal steam baths as well as yoga and meditation.\n\n•It is the goal to let body and soul come to rest.\n\n"+"DURATION OF TREATMENT: 180-240 Mins",
 
-            "•The success of these treatments is obvious: your complexion is visibly more radiant, your skin smoother, your body firmer.\n•The Beauty Care Package delivers on what it promises: it provides your skin with protection and beauty.\n•This treatment pursues one goal above all else: you are to feel completely relaxed.\n\n"+"DURATION OF TREATMENT: 90-120 MIN"
+            "ABOUT\n•The success of these treatments is obvious: your complexion is visibly more radiant, your skin smoother, your body firmer.\n\n•The Beauty Care Package delivers on what it promises: it provides your skin with protection and beauty.\n\n•This treatment pursues one goal above all else: you are to feel completely relaxed.\n\n"+"DURATION OF TREATMENT: 90-120 Mins"
     };
 
 
     HashMap<String,String>item;
     ArrayList list;
     SimpleAdapter sa;
-    Button gtc;
+    Button gtc,h;
     ListView l1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class packages extends AppCompatActivity {
         setContentView(R.layout.activity_packages);
         gtc=findViewById(R.id.buttonGoToCartBM);
         l1=findViewById(R.id.listViewBM);
+        h=findViewById(R.id.imageButton1);
 
         list=new ArrayList<>();
         for (int i = 0; i < packages.length; i++) {
@@ -80,7 +81,12 @@ public class packages extends AppCompatActivity {
                 startActivity(new Intent(packages.this, cartPackage.class));
             }
         });
-
+        h.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(packages.this, Home.class));
+            }
+        });
 
     }
 }

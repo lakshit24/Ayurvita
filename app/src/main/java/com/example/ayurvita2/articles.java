@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -15,31 +16,35 @@ import java.util.HashMap;
 public class articles extends AppCompatActivity {
 
     private String[][] ayurved_details={
-            {"What is Ayurveda ?","","","","Click to know"},
-            {"Myths about Ayurveda","","","","Click to know"},
-            {"Rules for Eating","","","","Click to know"},
-            {"Rules for Eating","","","","Click to know"},
-            {"Rules for Eating","","","","Click to know"}
+            {"What is Ayurveda ?","","","","Click to View"},
+            {"Types of Ayurveda","","","","Click to View"},
+            {"Myths and Facts","","","","Click to View"},
+            {"Benifits of Ayurveda","","","","Click to View"},
+            {"Rules for Eating","","","","Click to View"},
+            {"Ayurvedic Treatment","","","","Click to View"}
+
     };
 
     private int[] imgs={
-            R.drawable.untitled_design,
+            R.drawable.what,
+            R.drawable.types,
+            R.drawable.mvf,
+            R.drawable.benifits,
             R.drawable.myth,
-            R.drawable.rules,
-            R.drawable.rules,
-            R.drawable.rules
+            R.drawable.treatment
     };
     HashMap<String,String> item;
     ArrayList list;
     SimpleAdapter sa;
     ListView l1;
 
+    Button h;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_articles);
         l1=findViewById(R.id.listViewA);
-        
+        h=findViewById(R.id.imageButton1);
 
         list=new ArrayList<>();
         for (int i = 0; i < ayurved_details.length; i++) {
@@ -61,6 +66,12 @@ public class articles extends AppCompatActivity {
                 i1.putExtra("text1",ayurved_details[i][0]);
                 i1.putExtra("text2",imgs[i]);
                 startActivity(i1);
+            }
+        });
+        h.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(articles.this, Home.class));
             }
         });
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkGreen"
+    android:background="@drawable/finalhomebg"
     tools:context=".packageBook">
 
 
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/editTextBookAddress"
+        android:id="@+id/editTextBookContact2"
         android:layout_width="322dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
@@ -53,6 +53,7 @@
         android:drawablePadding="10sp"
         android:ems="10"
         android:hint="Contact Number"
+        android:maxLength="10"
         android:inputType="number"
         android:padding="10sp"
         android:textColor="@color/white"
@@ -75,6 +76,7 @@
         android:hint="Pincode"
         android:inputType="number"
         android:padding="10sp"
+        android:maxLength="6"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="24sp"
@@ -110,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="99dp"
         android:text="Book"
-        android:background="@color/white"
+        android:background="@drawable/button_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

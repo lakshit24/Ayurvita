@@ -23,15 +23,15 @@ public class medicineBook extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine_book);
 
-        etAddress=findViewById(R.id.editTextBookAddress);
+        etAddress=findViewById(R.id.editTextBookContact);
         etName=findViewById(R.id.editTextBookFullName);
-        etContact=findViewById(R.id.editTextBookContact);
+        etContact=findViewById(R.id.editTextBookContact3);
         etPincode=findViewById(R.id.editTextBookPincode);
         btnBook=findViewById(R.id.buttonBook);
 
 
 
-        // The phone number is valid
+
         Intent intent=getIntent();
         String[] price=intent.getStringExtra("price").toString().split(java.util.regex.Pattern.quote(":"));
         String date=intent.getStringExtra("date");
@@ -40,6 +40,11 @@ public class medicineBook extends AppCompatActivity {
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(etPincode.getText().toString().length()<6||etContact.getText().toString().length()<10||etAddress.getText().toString().length()==0||etName.getText().toString().length()==0)
+                {
+                    Toast.makeText(getApplicationContext(), "Please Fill All Details Correctly", Toast.LENGTH_SHORT).show();
+                }
+                else{
                 SharedPreferences sharedpref=getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                 String username=sharedpref.getString("username","").toString();
                 Database db =new Database(getApplicationContext(),"my_db",null,1);
@@ -47,7 +52,7 @@ public class medicineBook extends AppCompatActivity {
                 db.removeCart(username,"medicine");
                 Toast.makeText(getApplicationContext(), "Booking Successful!!", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(medicineBook.this, Home.class));
-            }
+            }}
         });
     }
 }

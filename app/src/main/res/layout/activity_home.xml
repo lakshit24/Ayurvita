@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home"
     android:backgroundTint="#C8C7C7"
     android:backgroundTintMode="multiply"
-    android:background="@drawable/bg2">
+    android:background="@drawable/finalhomebg">
+
+
+
+
 
 
     <TextView
@@ -87,15 +94,16 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/language" />
+                    android:src="@drawable/widgets" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Our Services"
-                    android:textSize="17sp"
+                    android:text="Order Details"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -197,11 +205,11 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/widgets" />
+                    android:src="@drawable/language" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Order Details"
+                    android:text="About Us"
                     android:textSize="17sp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
