@@ -74,7 +74,7 @@
         android:drawablePadding="10sp"
         android:ems="10"
         android:hint="Pincode"
-          android:maxLength="16"
+          android:maxLength="6"
         android:inputType="number"
         android:padding="10sp"
         android:textColor="@color/white"
